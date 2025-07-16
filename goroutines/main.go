@@ -12,7 +12,8 @@ func fun(value string) {
 	}
 }
 
-func main() {
+// Change main to main1 to avoid conflict with main function
+func main1() {
 	// Direct call to the function
 	fun("Direct call")
 
