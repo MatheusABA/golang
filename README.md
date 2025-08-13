@@ -318,9 +318,67 @@ var ptr *int
 if ptr == nil {
     fmt.Println("ptr is nil")
 }
+```
+### Generics
+```go
+// Generics allow you to write functions and types that work with any data type.
+// Example: a generic function to swap two values of any type.
+
+func Swap[T any](a, b T) (T, T) {
+    return b, a
+}
+
+x, y := Swap[int](1, 2)      // Works with int
+s1, s2 := Swap[string]("a", "b") // Works with string
+```
+### Structs and Interfaces
+```go
+// Structs are custom types that group fields together.
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+p := Person{Name: "Alice", Age: 30}
+fmt.Println(p.Name, p.Age)
 
 
 
+// Interfaces define behavior (methods) that types can implement.
+
+type Greeter interface {
+    Greet() string
+}
+
+type Person struct {
+    Name string
+}
+
+func (p Person) Greet() string {
+    return "Hello, " + p.Name
+}
+
+var g Greeter = Person{Name: "Bob"}
+fmt.Println(g.Greet())
+
+-- 
+
+type HandleException interface {
+		Handle() string
+}
+
+type Exception struct {
+		Status 	int32,
+		Message string
+}
+
+func (httpException Exception) Handle() string {
+		return fmt.Sprintf("Status: %d, Message: %s", e.Status, e.Message)
+}
+
+var newHandler HandleException = Exception{Status: 200, Message: "OK"}
+fmt.Println(newHandler.Handle())
 
 
 

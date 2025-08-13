@@ -5,13 +5,13 @@ import (
 )
 
 func main() {
-	request := gin.Default()
+	router := gin.Default()
 
-	request.GET("/hello", func(context *gin.Context) {
+	router.GET("/hello", func(context *gin.Context) {
 		context.JSON(200, gin.H{
 			"message": "world",
 		})
 	})
 
-	request.Run(":8088")
+	router.Run(":8088")
 }
