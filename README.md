@@ -362,26 +362,55 @@ func (p Person) Greet() string {
 var g Greeter = Person{Name: "Bob"}
 fmt.Println(g.Greet())
 
--- 
-
+--
+// First we define an interface for handling exceptions
+// To implement this interface, a type must have a Handle method
 type HandleException interface {
 		Handle() string
 }
 
+// We now implement a struct for the exception that receives
+// a status code and a message
 type Exception struct {
-		Status 	int32,
+		Status 	int32
 		Message string
 }
 
+// Then we create a method to handle the exception
+// It needs to satisfy the HandleException interface
+// using Handle method
 func (httpException Exception) Handle() string {
 		return fmt.Sprintf("Status: %d, Message: %s", e.Status, e.Message)
 }
 
+// Now we create a new instance of the Exception struct
+// It creates a new exception with a status code and a message
+// And we assign it to the HandleException interface
+// Because it uses the Handle method
 var newHandler HandleException = Exception{Status: 200, Message: "OK"}
 fmt.Println(newHandler.Handle())
 
 
+```
+### Hot Reload with Air
+[Air](https://github.com/cosmtrek/air) is a popular hot reload tool for Go projects.  
+It watches your project files and automatically rebuilds and restarts your server whenever you save changes, making development faster and more convenient.
 
+To install, just run:
+```sh
+go install github.com/cosmtrek/air@latest
+```
+Make sure your Go binary directory (`$HOME/go/bin` or `%USERPROFILE%\go\bin`) is in your system PATH.
+After that, you can use Air by running the `air` command in your project directory.
+```sh
+air
+```
+You can customize Air’s behavior by generating a `.air.toml` configuration file:
+```sh
+air init
+```
+This file lets you define build commands, specify which files and folders to watch or ignore, and adjust other settings.
+###
 
 
 
