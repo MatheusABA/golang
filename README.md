@@ -15,6 +15,9 @@
 | `go env`                 | Displays Go environment variables.                                 |
 | `go version`             | Shows the installed Go version.                                    |
 
+# Leetcode Tracking
+
+[![LeetCode Stats](https://leetcard.jacoblin.cool/matheusaba?ext=activity&border=1)](https://leetcode.com/MatheusABA)
 
 # Annotations
 ```go
