@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 Write a function to find the longest common prefix string amongst an array of strings.
 
@@ -19,19 +17,5 @@ Explanation: There is no common prefix among the input strings.
 
 */
 func main() {
-
-	strs := []string{"flower", "flow", "flight"}
-	fmt.Println(longestCommonPrefix(strs))
-}
-
-func longestCommonPrefix(strs []string) string {
-	index := 0
-	longestCommonPrefix := strs[index]
-
-	for i := 0; i < len(secondString); i++ {
-		if firstString[i] == secondString[i] {
-			longestCommonPrefix += string(firstString[i])
-		}
-	}
 
 }
